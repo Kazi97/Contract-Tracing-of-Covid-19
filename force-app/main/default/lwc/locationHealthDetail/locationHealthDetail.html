@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class={backgroundColor}>
+            <template if:true={location}>
+                <div class="white slds-box slds-p-around_small">
+                    <p style="font-size: large;text-align: center;">Location Details:</p>
+                    <p>Name: {name}</p>
+                    <p>Address: {address}</p>
+                    <p>Pincode: {pincode}</p>
+                    <p>Status: {status}</p>
+                    <p>Red Score: {redScore}</p>
+                    <p>Status Update Date: {statusUpdateDate}</p>
+                </div>
+            </template>
+            <template if:false={location}>
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

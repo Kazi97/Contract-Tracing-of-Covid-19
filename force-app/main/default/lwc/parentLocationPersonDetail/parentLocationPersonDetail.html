@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Select any record from Person View/Health View.">
+        <div class="slds-p-around_small">
+            <template if:true={person}>
+                <c-person-health-detail person-id={personId}></c-person-health-detail>
+            </template>
+            <template if:true={location}>
+                <c-location-health-detail location-id={locationId}></c-location-health-detail>
+            </template>
+        </div>        
+    </lightning-card>
+</template>

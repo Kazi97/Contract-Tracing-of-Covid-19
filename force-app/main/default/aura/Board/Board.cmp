@@ -1,0 +1,45 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- public attributes -->
+    <aura:attribute name="mode" type="String" default="easy" />
+
+    <!-- private attributes -->
+    <aura:attribute name="wordList" type="List" access="private" />
+    <aura:attribute name="winWord" type="String" access="private" />
+    <aura:attribute name="clickCount" type="Integer" default="0" access="private" />
+    <aura:attribute name="blockSize" type="Integer" access="private" />
+    <aura:attribute name="result" type="String" access="private" />
+    <aura:attribute name="boardDisabled" type="Boolean" default="false" access="private" />
+
+    <!-- handleing init method -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- handleing custom events -->
+    <!-- <aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.blockClickHandler}" /> -->
+
+
+    <div class="board slds-is-relative">
+        <lightning:layout>
+            <lightning:layoutItem class="slds-var-p-around_small">
+                <div class="slds-text-heading--medium">WORD: <span class="win-word">{!v.winWord}</span></div>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-var-p-around_small">
+                <div class="slds-text-heading--medium">{! v.result}</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-var-p-around_small">
+                <div class="slds-text-heading--medium">Moves Left: {!(3 - v.clickCount)}</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <aura:if isTrue="{! v.boardDisabled}">
+            <div class="board_disible"></div>
+        </aura:if>
+
+        <lightning:layout multipleRows="true" class="slds-var-p-around_small">
+            <aura:iteration items="{!v.wordList}" var="word">
+                <lightning:layoutItem size="{!v.blockSize}" padding="around-small">
+                    <c:Block label="{!word}" onclick="{!c.blockClickHandler}" />
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+    </div>
+</aura:component>

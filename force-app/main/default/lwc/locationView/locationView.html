@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-p-around_small container">
+        <div class="slds-grid slds-gutters slds-box">
+            <div class="heading slds-col slds-size_1-of-3">
+                Recent Updates
+            </div>
+            <div class="slds-col slds-size_2-of-3 slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2 divSearch">
+                    <lightning-input class="headingSearch" type="text" placeholder="Search Location" onchange={searchLocationHandler}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-button class="headingButton" label="New" onclick={newLocationHandler}></lightning-button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-box">
+            <div class="slds-col slds-size_1-of-4 font" style="color: green;">
+                <p>Green</p>
+                <p>{location_green}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-4 font" style="color: #e6e600;">
+                <p>Yellow</p>
+                <p>{location_yellow}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-4 font" style="color: orange;">
+                <p>Orange</p>
+                <p>{location_orange}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-4 font" style="color: red;">
+                <p>Red</p>
+                <p>{location_red}</p>
+            </div>
+        </div>
+        </br>
+        <div class="datatable">
+            <lightning-datatable show-row-number-column="true" hide-checkbox-column="true" key-field="id"
+                data={location_healthData} columns={columns} onrowaction={handleChange}>
+            </lightning-datatable>
+        </div>
+    </div>
+</template>

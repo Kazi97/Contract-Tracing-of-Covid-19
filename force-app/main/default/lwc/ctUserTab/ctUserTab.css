@@ -1,0 +1,32 @@
+.search{
+    margin-top: -3%;
+    padding-left: 20%;
+}
+
+.Red{
+    background-color: red;
+    padding: 2%;
+}
+
+.Yellow{
+    background-color: #e6e600;
+    padding: 2%;
+}
+
+.Orange{
+    background-color: orange;
+    padding: 2%;
+}
+
+.Green{
+    background-color: green;
+    padding: 2%;
+}
+
+.white{
+    background-color: whitesmoke;
+}
+
+.personinfoDiv{
+    font-size: 130%;
+}

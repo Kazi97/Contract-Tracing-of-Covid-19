@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <div class={backgroundColor}>
+            <template if:true={person}>
+                <div class="white slds-box slds-p-around_small">
+                    <p style="font-size: large;text-align: center;">Person Details:</p>
+                    <p>Name: {name}</p>
+                    <p>Mobile: {mobile}</p>
+                    <p>Token: {token}</p>
+                    <p>Status: {healthStatus}</p>
+                    <p>Status Update Date: {statusUpdateDate}</p>
+                    </br>
+                    <template if:true={statusColor}>
+                        <p>
+                            <lightning-button variant="destructive" label="Update Status To RED" onclick={testHandler}>
+                            </lightning-button>
+                        </p>
+                    </template>
+                </div>
+            </template>
+            <template if:false={person}>
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

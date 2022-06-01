@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ContactTracingMessageChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>This is a sample Lightning Message Channel.</description>
+
+    <lightningMessageFields>
+        <fieldName>personId</fieldName>
+        <description>This is the Person Id</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>locationId</fieldName>
+        <description>This is the location Id</description>
+    </lightningMessageFields>
+
+</LightningMessageChannel>

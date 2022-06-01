@@ -1,0 +1,29 @@
+.font{
+    font-size: large;
+    text-align: center;
+}
+
+.datatable{
+    height: 280px;
+}
+
+.heading{
+    font-size: 200%;
+}
+
+.headingButton{
+    float: right;
+    margin-top: 5%;
+}
+
+.headingSearch{
+    margin-right: -50%;
+}
+
+.divSearch{
+    margin-top: -2.5%;
+}
+
+.container{
+    height: 500px;
+}
